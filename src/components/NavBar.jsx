@@ -1,5 +1,8 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleUser, faRightToBracket, faGear } from '@fortawesome/free-solid-svg-icons';
+
 
 const NavBar = () => {
   const user = useSelector((state) => state.user);
@@ -29,7 +32,9 @@ const NavBar = () => {
                     <li>
                       <a className="justify-between text-slate-800 hover:bg-blue-400">
                         <span className="flex items-center gap-2">
-                          <span className="text-blue-700">👤</span>
+                          <span className="text-blue-700">
+                            <FontAwesomeIcon icon={faCircleUser} />
+                          </span>
                           <span>Profile</span>
                         </span>
                       </a>
@@ -37,7 +42,9 @@ const NavBar = () => {
                     <li>
                       <a className="text-slate-800 hover:bg-blue-400">
                         <span className="flex items-center gap-2">
-                          <span className="text-blue-700">⚙️</span>
+                          <span className="text-blue-700">
+                            <FontAwesomeIcon icon={faGear} />
+                          </span>
                           <span>Settings</span>
                         </span>
                       </a>
@@ -45,7 +52,9 @@ const NavBar = () => {
                     <li>
                       <a className="text-slate-800 hover:bg-blue-400">
                         <span className="flex items-center gap-2">
-                          <span className="text-blue-700">🚪</span>
+                          <span className="text-blue-700">
+                            <FontAwesomeIcon icon={faRightToBracket} />
+                          </span>
                           <span>Logout</span>
                         </span>
                       </a>
