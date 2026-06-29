@@ -61,7 +61,7 @@ const Login = () => {
         <div className="card-body">
           <h2 className="card-title">Login</h2>
           <form onSubmit={handleLogin} className="space-y-3" noValidate> 
-                <label className="input validator my-3">
+                <label className="input validator my-3 outline-none! ring-0! focus-within:outline-none! focus-within:ring-0!">
                   <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <g
                       strokeLinejoin="round"
@@ -82,11 +82,12 @@ const Login = () => {
                         autoComplete="email"
                         value={emailId}
                         onChange={handleEmailChange}
+                        className="outline-none ring-0 focus:outline-none focus:ring-0 bg-transparent"
                         />
                 </label>
                 <div className="validator-hint hidden">Enter valid email address</div>
 
-                  <label className="input validator my-3 flex items-center gap-2">
+                  <label className="input validator my-3 flex items-center gap-2 outline-none! ring-0! focus-within:outline-none! focus-within:ring-0!">
                     <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                       <g
                         strokeLinejoin="round"
@@ -115,7 +116,7 @@ const Login = () => {
                       title="Must be more than 8 characters, including number, lowercase letter, uppercase letter"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
-                      className="grow"
+                      className="grow outline-none ring-0 focus:outline-none focus:ring-0 bg-transparent"
                     />
                     <button
                       type="button"
