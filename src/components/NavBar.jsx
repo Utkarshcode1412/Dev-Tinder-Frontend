@@ -15,7 +15,7 @@ const NavBar = () => {
             {user && (
               <div className="flex items-center gap-3">
                 <div className=" rounded-2xl bg-blue-700 px-4 py-2 text-white shadow-sm">
-                  Welcome, {user.firstName} {user.lastName}
+                {user.firstName} {user.lastName}
                 </div>
                 <div className="dropdown dropdown-end">
                   <div tabIndex={0} role="button" className="btn btn-primary btn-circle avatar mx-5">
