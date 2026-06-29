@@ -1,16 +1,18 @@
-import NavBar from "./NavBar.jsx"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import Body from "./Body.jsx"
+import Login from "./Login.jsx"
+import Profile from "./Profile.jsx"
 
 function App() {
   return (
     <>
-       <NavBar/>      
-
-       <div className="p-10 flex flex-col items-center justify-center gap-4 min-h-screen bg-base-200">
-          <h1 className="text-3xl font-bold text-center">
-            Hi Utkarsh!!!!!
-          </h1>
-          <button className="btn btn-primary">fuck Me</button>
-        </div>
+      <BrowserRouter basename="/">
+          <Routes>
+              <Route path="/" element={<Body />} />
+                <Route path="/login" element={<Login/>} />
+                <Route path="/profile" element={<Profile/>} />
+          </Routes>
+      </BrowserRouter>
     </>
   )
 }

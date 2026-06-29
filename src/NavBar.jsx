@@ -1,13 +1,15 @@
+import React from 'react'
+
 const NavBar = () => {
   return (
     <>
-       <div className="navbar bg-base-300 shadow-sm">
+       <div className="navbar bg-neutral shadow-sm">
           <div className="flex-1">
-            <a className="btn btn-ghost text-xl">Dev Tinder</a>
+            <a className="btn btn-primary text-xl">Dev Tinder</a>
           </div>
           <div className="flex gap-2">
             <div className="dropdown dropdown-end">
-              <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar mx-5">
+              <div tabIndex={0} role="button" className="btn btn-primary btn-circle avatar mx-5">
                 <div className="w-10 rounded-full">
                   <img
                     alt="Tailwind CSS Navbar component"
@@ -16,11 +18,11 @@ const NavBar = () => {
               </div>
               <ul
                 tabIndex="-1"
-                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                className="menu menu-sm dropdown-content bg-blue-700 rounded-box z-1 mt-3 w-52 p-2 shadow">
                 <li>
                   <a className="justify-between">
                     Profile
-                    <span className="badge">New</span>
+                    <span className="badge bg-blue-300">New</span>
                   </a>
                 </li>
                 <li><a>Settings</a></li>
