@@ -1,35 +1,59 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
 
 const NavBar = () => {
+  const user = useSelector((state) => state.user);
   return (
     <>
        <div className="navbar bg-neutral shadow-sm">
           <div className="flex-1">
             <a className="btn btn-primary text-xl">Dev Tinder</a>
           </div>
-          <div className="flex gap-2">
-            <div className="dropdown dropdown-end">
-              <div tabIndex={0} role="button" className="btn btn-primary btn-circle avatar mx-5">
-                <div className="w-10 rounded-full">
-                  <img
-                    alt="Tailwind CSS Navbar component"
-                    src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+            {user && (
+              <div className="flex items-center gap-3">
+                <div className=" rounded-2xl bg-blue-700 px-4 py-2 text-white shadow-sm">
+                  Welcome, {user.firstName} {user.lastName}
+                </div>
+                <div className="dropdown dropdown-end">
+                  <div tabIndex={0} role="button" className="btn btn-primary btn-circle avatar mx-5">
+                    <div className="w-14 rounded-full">
+                      <img
+                        alt="user photo"
+                        className="object-cover"
+                        src={user.photoUrl} />
+                    </div>
+                  </div>
+                  <ul
+                    tabIndex="-1"
+                    className="menu menu-sm dropdown-content rounded-box z-1 mt-3 w-56 border border-blue-300 bg-slate-100 p-2 shadow-lg">
+                    <li>
+                      <a className="justify-between text-slate-800 hover:bg-blue-400">
+                        <span className="flex items-center gap-2">
+                          <span className="text-blue-700">👤</span>
+                          <span>Profile</span>
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a className="text-slate-800 hover:bg-blue-400">
+                        <span className="flex items-center gap-2">
+                          <span className="text-blue-700">⚙️</span>
+                          <span>Settings</span>
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a className="text-slate-800 hover:bg-blue-400">
+                        <span className="flex items-center gap-2">
+                          <span className="text-blue-700">🚪</span>
+                          <span>Logout</span>
+                        </span>
+                      </a>
+                    </li>
+                  </ul>
                 </div>
               </div>
-              <ul
-                tabIndex="-1"
-                className="menu menu-sm dropdown-content bg-blue-700 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                <li>
-                  <a className="justify-between">
-                    Profile
-                    <span className="badge bg-blue-300">New</span>
-                  </a>
-                </li>
-                <li><a>Settings</a></li>
-                <li><a>Logout</a></li>
-              </ul>
-            </div>
-          </div>
+            )}
         </div>
     </>
   )
