@@ -23,7 +23,7 @@ const Footer = () => {
   
   return (
     <div>
-        <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content items-center p-4 fixed bottom-0 left-0 w-full z-50">
+        <footer className="footer sm:footer-horizontal border-t border-base-300 bg-base-100 text-base-content items-center p-4 fixed bottom-0 left-0 w-full z-50">
             <aside className="grid-flow-col items-center">
                 <p>Copyright © {new Date().getFullYear()} - All right reserved</p>
             </aside>

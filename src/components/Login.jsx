@@ -13,8 +13,8 @@ const Login = () => {
 
   useEffect(() => {
     const savedEmail = localStorage.getItem("devTinderEmail") || "";
-    setEmailId("");
-    setPassword("");
+    setEmailId("utkarsh@gmail.com");
+    setPassword("Utkarsh@123");
   }, []);
 
   const dispatch = useDispatch();
@@ -141,7 +141,7 @@ const Login = () => {
                 </p>
                 {error && <p className="text-sm text-red-500 mt-2">{error}</p>}
                 <div className="card-actions justify-center pt-2">
-                  <button type="submit" className="btn btn-primary">Login</button>
+                  <button type="submit" className="btn btn-soft btn-primary">Login</button>
                 </div>
           </form>
         </div>
