@@ -1,11 +1,17 @@
 import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleUser, faRightToBracket, faGear } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { BASE_URL } from '../utils/constants';
+import { removeUser } from '../utils/userSlice';
 
 const NavBar = () => {
   const user = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light');
 
   useEffect(() => {
@@ -23,11 +29,29 @@ const NavBar = () => {
     localStorage.setItem('theme', theme);
   }, [theme]);
 
+
+  const handleLogout = async() => {
+    try {
+
+      await axios.post(BASE_URL + "/logout", {}, {withCredentials: true});
+      dispatch(removeUser());
+      return navigate("/login");
+
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+
   return (
     <>
       <div className="navbar border-b border-base-300 bg-base-100 text-base-content shadow-sm">
         <div className="flex-1">
-          <Link to="/" className="btn btn-soft btn-primary text-xl">Dev Tinder</Link>
+          {user ? (
+            <Link to="/" className="btn btn-soft btn-primary text-xl">Dev Tinder</Link>
+          ) : (
+            <button className="btn btn-soft btn-primary text-xl" >Dev Tinder</button>
+          )}
         </div>
 
         <div className="flex items-center gap-3">
@@ -90,7 +114,7 @@ const NavBar = () => {
                   </a>
                 </li>
                 <li>
-                  <a className="text-base-content hover:bg-primary/10">
+                  <a onClick={handleLogout} className="text-base-content hover:bg-primary/10">
                     <span className="flex items-center gap-2">
                       <span className="text-blue-700">
                         <FontAwesomeIcon icon={faRightToBracket} />
