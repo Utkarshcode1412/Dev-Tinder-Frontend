@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice.js';
 import { useNavigate } from 'react-router-dom';
 import { BASE_URL } from '../utils/constants.js';
+import { removeFeed } from '../utils/feedSlice.js';
 
 const Login = () => {
   const [emailId, setEmailId] = useState("");
@@ -47,6 +48,7 @@ const Login = () => {
       localStorage.removeItem("devTinderEmail");
       setEmailId("");
       setPassword("");
+      dispatch(removeFeed());
       dispatch(addUser(res.data));
       return navigate("/");
     } catch (err) {

@@ -4,8 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleUser, faRightToBracket, faGear } from '@fortawesome/free-solid-svg-icons';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { BASE_URL } from '../utils/constants';
-import { removeUser } from '../utils/userSlice';
+import { BASE_URL } from '../utils/constants.js';
+import { removeUser } from '../utils/userSlice.js';
+import { removeFeed } from '../utils/feedSlice.js';
 
 const NavBar = () => {
   const user = useSelector((store) => store.user);
@@ -34,8 +35,15 @@ const NavBar = () => {
   const handleLogout = async() => {
     try {
 
-      await axios.post(BASE_URL + "/logout", {}, {withCredentials: true});
+      await axios.post(
+        BASE_URL + "/logout", 
+        {}, 
+        {withCredentials: true}
+      );
+
       dispatch(removeUser());
+      dispatch(removeFeed());
+
       return navigate("/login");
 
     } catch (error) {
