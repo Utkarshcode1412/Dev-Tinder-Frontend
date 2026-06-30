@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleUser, faRightToBracket, faGear } from '@fortawesome/free-solid-svg-icons';
+import { faCircleUser, faRightToBracket, faGear, faHandshake, faTree } from '@fortawesome/free-solid-svg-icons';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { BASE_URL } from '../utils/constants.js';
@@ -55,11 +55,17 @@ const NavBar = () => {
   return (
     <>
       <div className="navbar border-b border-base-300 bg-base-100 text-base-content shadow-sm">
-        <div className="flex-1">
-          {user ? (
-            <Link to="/" className="btn btn-soft btn-primary text-xl">Dev Tinder</Link>
+        <div className="flex-1"> 
+         {user ? (
+            <Link to="/" className="btn btn-soft btn-primary text-xl">
+              <FontAwesomeIcon icon={faTree} />
+              <span>Dev Tinder</span>
+            </Link>
           ) : (
-            <button className="btn btn-soft btn-primary text-xl" >Dev Tinder</button>
+            <button className="btn btn-soft btn-primary text-xl">
+              <FontAwesomeIcon icon={faTree} />
+              <span>Dev Tinder</span>
+            </button>
           )}
         </div>
 
@@ -67,8 +73,10 @@ const NavBar = () => {
           {user && (
             <Link
               to="/viewprofile"
-              className="rounded-2xl bg-blue-700 px-4 py-2 text-white shadow-sm transition hover:bg-blue-800"
-            >
+              className="flex items-center gap-2 rounded-2xl bg-blue-700 px-4 py-2 text-white shadow-sm transition hover:bg-blue-800"
+            > <span>
+                <FontAwesomeIcon icon={faCircleUser} />
+              </span>
               {user.firstName} {user.lastName}
             </Link>
           )}
@@ -112,6 +120,16 @@ const NavBar = () => {
                         <FontAwesomeIcon icon={faCircleUser} />
                       </span>
                       <span>Edit Profile</span>
+                    </span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/connections" className="text-base-content hover:bg-primary/10">
+                    <span className="flex items-center gap-2">
+                      <span className="text-blue-700">
+                        <FontAwesomeIcon icon={faHandshake} />
+                      </span>
+                      <span>Connections</span>
                     </span>
                   </Link>
                 </li>

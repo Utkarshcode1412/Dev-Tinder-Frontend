@@ -1,5 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLayerGroup } from '@fortawesome/free-solid-svg-icons';
 
 const ProfileCard = ({ user }) => {
   const userData = useSelector((store) => store.user);
@@ -11,7 +13,10 @@ const ProfileCard = ({ user }) => {
 
   return (
     <>
-      <button className=' btn bg-cyan-700  mx-175 my-2'>My Profile</button>
+      <button className=' btn bg-cyan-700  mx-175 my-2'>
+        <FontAwesomeIcon icon={faLayerGroup} />
+        <span>My Profile</span>
+      </button>
       <div className="flex justify-center px-4 py-10">
         <div className="card w-full max-w-md bg-base-200 shadow-xl">
           <figure className="px-6 pt-6">
@@ -22,7 +27,7 @@ const ProfileCard = ({ user }) => {
             />
           </figure>
           <div className="card-body items-center text-center">
-            <h2 className="card-title text-2xl">{`${firstName} ${lastName}`}</h2>
+            <h2 className=" card-title text-2xl">{`${firstName} ${lastName}`}</h2>
             {(age || gender) && (
               <p className="text-sm opacity-80">{[age, gender].filter(Boolean).join(', ')}</p>
             )}
