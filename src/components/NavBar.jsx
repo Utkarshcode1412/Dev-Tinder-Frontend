@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleUser, faRightToBracket, faGear, faHandshake, faTree } from '@fortawesome/free-solid-svg-icons';
+import { faCircleUser, faRightToBracket, faGear, faHandshake, faTree, faComment } from '@fortawesome/free-solid-svg-icons';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { BASE_URL } from '../utils/constants.js';
@@ -130,6 +130,16 @@ const NavBar = () => {
                         <FontAwesomeIcon icon={faHandshake} />
                       </span>
                       <span>Connections</span>
+                    </span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/requests" className="text-base-content hover:bg-primary/10">
+                    <span className="flex items-center gap-2">
+                      <span className="text-blue-700">
+                        <FontAwesomeIcon icon={faComment} />
+                      </span>
+                      <span>Invitations</span>
                     </span>
                   </Link>
                 </li>

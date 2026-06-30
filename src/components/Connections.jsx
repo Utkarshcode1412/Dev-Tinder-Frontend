@@ -35,7 +35,7 @@ const Connections = () => {
 
   return (
     <div className="text-center my-10">
-        <div className="badge badge-lg badge-soft badge-info">
+        <div className="btn btn-primary">
             <FontAwesomeIcon icon={faUsers} />
             Connections
         </div>
@@ -47,7 +47,7 @@ const Connections = () => {
         return (
           <div
             key={_id}
-            className="flex  items-center m-4 p-4 rounded-lg bg-base-300 w-1/3 mx-auto"
+            className="flex items-center m-4 p-4 rounded-lg bg-base-300 w-1/2 mx-auto"
           >
             <div>
               <img
@@ -56,7 +56,7 @@ const Connections = () => {
                 src={photoUrl}
               />
             </div>
-            <div className="text-left mx-4 ">
+            <div className="text-left mx-9 ">
               <h2 className="font-bold text-xl">
                 {firstName + " " + lastName}
               </h2>
