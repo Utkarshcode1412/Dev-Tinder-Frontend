@@ -13,8 +13,8 @@ const Login = () => {
 
   useEffect(() => {
     const savedEmail = localStorage.getItem("devTinderEmail") || "";
-    setEmailId("utkarsh@gmail.com");
-    setPassword("Utkarsh@123");
+    setEmailId("virat123@gmail.com");
+    setPassword("Virat@123");
   }, []);
 
   const dispatch = useDispatch();
