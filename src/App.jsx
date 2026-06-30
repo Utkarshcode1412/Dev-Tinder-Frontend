@@ -7,6 +7,8 @@ import appStore from "./utils/appStore.js"
 import Feed from "./components/Feed.jsx"
 import PublicRoute from "./components/PublicRoute.jsx"
 import ViewProfile from "./components/ViewProfile.jsx"
+import Connections from "./components/Connections.jsx"
+import Requests from "./components/Requests.jsx"
 
 function App() {
   return (
@@ -18,6 +20,9 @@ function App() {
                     <Route index element={<Feed />} />
                     <Route path="profile" element={<Profile />} />
                     <Route path="viewprofile" element={<ViewProfile />} />
+                    <Route path="connections" element={<Connections />} />
+                    <Route path="requests" element={<Requests />} />
+                    
 
                     <Route element={<PublicRoute />}>
                       <Route path="login" element={<Login />} />

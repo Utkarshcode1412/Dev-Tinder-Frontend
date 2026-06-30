@@ -13,10 +13,12 @@ const ProfileCard = ({ user }) => {
 
   return (
     <>
-      <button className=' btn bg-cyan-700  mx-175 my-2'>
-        <FontAwesomeIcon icon={faLayerGroup} />
-        <span>My Profile</span>
-      </button>
+      <div className='flex justify-center my-2'>
+        <button className=' btn bg-cyan-700'>
+          <FontAwesomeIcon icon={faLayerGroup} />
+          <span>My Profile</span>
+        </button>
+      </div>
       <div className="flex justify-center px-4 py-10">
         <div className="card w-full max-w-md bg-base-200 shadow-xl">
           <figure className="px-6 pt-6">
