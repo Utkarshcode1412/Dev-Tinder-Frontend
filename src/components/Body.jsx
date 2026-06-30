@@ -36,7 +36,7 @@ const Body = () => {
 
 
   return (
-    <div>
+    <div className='  bg-blue-950/50'>
         <NavBar />
         <Outlet />
         <Footer />

@@ -12,7 +12,8 @@ const NavBar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light');
+  const [theme, setTheme] = useState(
+    () => localStorage.getItem('theme') || 'light');
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
