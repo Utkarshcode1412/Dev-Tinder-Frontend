@@ -65,9 +65,12 @@ const NavBar = () => {
 
         <div className="flex items-center gap-3">
           {user && (
-            <div className="rounded-2xl bg-blue-700 px-4 py-2 text-white shadow-sm">
+            <Link
+              to="/viewprofile"
+              className="rounded-2xl bg-blue-700 px-4 py-2 text-white shadow-sm transition hover:bg-blue-800"
+            >
               {user.firstName} {user.lastName}
-            </div>
+            </Link>
           )}
 
           <label
@@ -108,7 +111,7 @@ const NavBar = () => {
                       <span className="text-blue-700">
                         <FontAwesomeIcon icon={faCircleUser} />
                       </span>
-                      <span>Profile</span>
+                      <span>Edit Profile</span>
                     </span>
                   </Link>
                 </li>
