@@ -26,7 +26,7 @@ const UserCard = ({ user }) => {
             <figure>
                 <img src={photoUrl} alt={firstName} />
             </figure>
-            <div className="card-body">
+            <div className="card-body w-full max-w-md">
                 <h2 className="card-title">{firstName + " " + lastName}</h2>
                 {age && gender && <p>{age + ", " + gender}</p>}
                 <p>{about}</p>
