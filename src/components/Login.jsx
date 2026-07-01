@@ -53,7 +53,7 @@ const Login = () => {
       setEmailId("");
       setPassword("");
       dispatch(removeFeed());
-      dispatch(addUser(res?.data));
+      dispatch(addUser(res?.data?.data));
       return navigate("/");
 
     } catch (err) {
@@ -84,7 +84,8 @@ const Login = () => {
       setFirstName("");
       setLastName("");
 
-      return navigate("/profile");
+      navigate("/profile");
+
     } catch (err) {
       setError(err?.response?.data || "Something went wrong");
     }
