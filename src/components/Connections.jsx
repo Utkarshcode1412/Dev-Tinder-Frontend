@@ -49,10 +49,10 @@ const Connections = () => {
             key={_id}
             className="flex items-center m-4 p-4 rounded-lg bg-base-300 w-1/2 mx-auto"
           >
-            <div>
+            <div className="shrink-0">
               <img
-                alt="photo"
-                className="w-20 h-20 rounded-full object-cover"
+                alt={`${firstName} ${lastName}`}
+                className="w-24 h-24 rounded-full object-contain bg-base-200 border border-base-300 shadow-sm"
                 src={photoUrl}
               />
             </div>

@@ -99,8 +99,8 @@ const Login = () => {
 
   return (
     <div className="flex min-h-[calc(100vh-8rem)] items-center justify-center px-4 py-10">
-      <div className="soft-card w-full max-w-md rounded-[1.5rem] p-2">
-        <div className="card bg-transparent text-[color:var(--text)] shadow-none">
+      <div className="soft-card w-full max-w-md rounded-3xl p-2">
+        <div className="card bg-transparent text-(--text) shadow-none">
           <div className="card-body">
             <h2 className="card-title">{isLoginForm ? "Login" : "Sign Up"}</h2>
             <form onSubmit={handleSubmit} className="space-y-3" noValidate>
