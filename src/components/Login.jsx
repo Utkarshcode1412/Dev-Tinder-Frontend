@@ -55,7 +55,6 @@ const Login = () => {
       dispatch(removeFeed());
       dispatch(addUser(res?.data?.data));
       return navigate("/");
-
     } catch (err) {
       setError(err?.response?.data || "Something went wrong");
     }
@@ -85,7 +84,6 @@ const Login = () => {
       setLastName("");
 
       navigate("/profile");
-
     } catch (err) {
       setError(err?.response?.data || "Something went wrong");
     }
@@ -100,9 +98,9 @@ const Login = () => {
   };
 
   return (
-    <>
-      <div className=' bg-blue-950/50 flex items-center justify-center px-4 py-10'>
-        <div className="card bg-base-200 text-base-content w-96 shadow-sm">
+    <div className="flex min-h-[calc(100vh-8rem)] items-center justify-center px-4 py-10">
+      <div className="soft-card w-full max-w-md rounded-[1.5rem] p-2">
+        <div className="card bg-transparent text-[color:var(--text)] shadow-none">
           <div className="card-body">
             <h2 className="card-title">{isLoginForm ? "Login" : "Sign Up"}</h2>
             <form onSubmit={handleSubmit} className="space-y-3" noValidate>
@@ -242,7 +240,7 @@ const Login = () => {
               )}
 
               <div className="card-actions justify-center pt-2">
-                <button type="submit" className="btn btn-soft btn-primary w-full">
+                <button type="submit" className="btn btn-primary ">
                   {isLoginForm ? "Login" : "Sign Up"}
                 </button>
               </div>
@@ -264,7 +262,7 @@ const Login = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

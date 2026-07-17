@@ -36,10 +36,12 @@ const Body = () => {
 
 
   return (
-    <div className='  bg-blue-950/50'>
-        <NavBar />
+    <div className=" ">
+      <NavBar />
+      <div className="mx-auto flex min-h-[calc(100vh-8rem)] w-full max-w-7xl flex-col px-4 py-6 sm:px-6 lg:px-8">
         <Outlet />
-        <Footer />
+      </div>
+      <Footer />
     </div>
   )
 }

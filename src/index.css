@@ -1,10 +1,79 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+:root {
+  color-scheme: light;
+  --brand: #0d5fd3;
+  --brand-dark: #083c82;
+  --brand-soft: #eef5ff;
+  --cream: #f7efe2;
+  --surface: #fcfbf8;
+  --surface-2: #f4f8ff;
+  --text: #14233a;
+  --muted: #617186;
+  --border: rgba(13, 95, 211, 0.14);
+  --shadow: rgba(8, 60, 130, 0.12);
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --brand: #5aa6ff;
+  --brand-dark: #8fc3ff;
+  --brand-soft: #10253d;
+  --cream: #1a2434;
+  --surface: #0f1728;
+  --surface-2: #16253f;
+  --text: #f7efe2;
+  --muted: #b8c5d8;
+  --border: rgba(255, 255, 255, 0.12);
+  --shadow: rgba(0, 0, 0, 0.34);
+}
+
+body {
+  margin: 0;
+  font-family: Inter, "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, var(--cream) 0%, var(--surface) 60%, var(--brand-soft) 100%);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.btn.btn-primary {
+  background-color: var(--brand) !important;
+  border-color: var(--brand) !important;
+  color: var(--cream) !important;
+}
+
+.btn.btn-primary:hover {
+  background-color: var(--brand-dark) !important;
+  border-color: var(--brand-dark) !important;
+}
+
+.card,
+.input,
+.textarea,
+.select {
+  border-color: var(--border) !important;
+}
+
 input:focus,
 input:focus-visible,
 label:focus-within {
   outline: none !important;
   box-shadow: none !important;
   border-color: transparent !important;
+}
+
+.soft-card {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--border);
+  box-shadow: 0 16px 40px var(--shadow);
+  backdrop-filter: blur(14px);
+}
+
+html[data-theme="dark"] .soft-card {
+  background: rgba(15, 23, 40, 0.82);
 }

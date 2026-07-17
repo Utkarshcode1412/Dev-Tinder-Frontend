@@ -22,8 +22,8 @@ const UserCard = ({ user }) => {
     };
 
     return (
-        <div className="card bg-sky-800 w-96 shadow-xl">
-            <figure>
+        <div className="soft-card card w-full max-w-md overflow-hidden rounded-[1.5rem]">
+            <figure className=" p-4">
                 <img src={photoUrl} alt={firstName} />
             </figure>
             <div className="card-body w-full max-w-md">
@@ -32,13 +32,13 @@ const UserCard = ({ user }) => {
                 <p>{about}</p>
                 <div className="card-actions justify-center my-4">
                 <button
-                    className="btn btn-outline btn-error"
+                    className="btn border-[color:var(--border)] bg-transparent text-[color:var(--text)] hover:bg-[color:var(--brand-soft)]"
                     onClick={() => handleSendRequest("ignored", _id)}
                 >
                     Ignore
                 </button>
                 <button
-                    className="btn btn-outline btn-success"
+                    className="btn bg-[color:var(--brand)] text-[color:var(--cream)] hover:bg-[color:var(--brand-dark)]"
                     onClick={() => handleSendRequest("interested", _id)}
                 >
                     Interested

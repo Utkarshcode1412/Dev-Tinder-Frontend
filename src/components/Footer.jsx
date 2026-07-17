@@ -23,7 +23,7 @@ const Footer = () => {
   
   return (
     <div>
-        <footer className="footer sm:footer-horizontal border-t border-base-300 bg-base-100 text-base-content items-center p-4 fixed bottom-0 left-0 w-full z-50">
+        <footer className="footer sm:footer-horizontal fixed bottom-0 left-0 z-50 w-full items-center border-t border-[color:var(--border)] bg-[color:var(--surface)]/90 p-4 text-[color:var(--text)] backdrop-blur">
             <aside className="grid-flow-col items-center">
                 <p>Copyright © {new Date().getFullYear()} - All right reserved</p>
             </aside>
