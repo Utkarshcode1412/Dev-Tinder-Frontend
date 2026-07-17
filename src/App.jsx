@@ -9,6 +9,7 @@ import PublicRoute from "./components/PublicRoute.jsx"
 import ViewProfile from "./components/ViewProfile.jsx"
 import Connections from "./components/Connections.jsx"
 import Requests from "./components/Requests.jsx"
+import Chat from "./components/Chat.jsx"
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
                     <Route path="viewprofile" element={<ViewProfile />} />
                     <Route path="connections" element={<Connections />} />
                     <Route path="requests" element={<Requests />} />
+                    <Route path="chat/:targetUserId" element={<Chat />} />
                     
 
                     <Route element={<PublicRoute />}>
