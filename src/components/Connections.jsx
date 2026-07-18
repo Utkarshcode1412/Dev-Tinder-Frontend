@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useEffect } from 'react'
+import { Link } from 'react-router-dom';
 import { BASE_URL } from '../utils/constants.js'
 import { addConnections } from '../utils/connectionSlice.js';
 import { useDispatch, useSelector } from 'react-redux';
@@ -63,8 +64,8 @@ const Connections = () => {
               {age && gender && <p>{age + ", " + gender}</p>}
               <p>{about}</p>
             </div>
-            <Link to={"chat/" + _id}>
-              <button className='btn btn-primary'>Chat</button>  
+            <Link to={`/chat/${_id}`}>
+              <button className='btn btn-primary'>Message</button>
             </Link>
           </div>
         );
