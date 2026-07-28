@@ -17,10 +17,14 @@ const Chat = () => {
         return;
     }
     const socket = createSocketConnection();
-    socket.emit("joinChat", { firstName: user.firstName, userId, targetUserId });
+    socket.emit("joinChat", { 
+        firstName: user.firstName, 
+        userId, 
+        targetUserId 
+    });
 
-    socket.on("messageReceived", ({ firstName, lastName, text }) => {
-      setMessages((messages) => [...messages, { firstName, lastName, text }]);
+    socket.on("messageReceived", ({ firstName, text }) => {
+      setMessages((messages) => [...messages, { firstName, text }]);
     });
 
     return () => {
@@ -32,7 +36,6 @@ const Chat = () => {
     const socket = createSocketConnection();
     socket.emit("sendMessage", {
         firstName: user.firstName,
-        lastName: user.lastName,
         userId,
         targetUserId,
         text: newMessage
@@ -50,7 +53,7 @@ const Chat = () => {
                         key={index}
                         className={
                             "chat " +
-                            (user.firstName === msg.firstName ? "chat-end" : "chat-start")
+                            (user?.firstName === msg.firstName ? "chat-end" : "chat-start")
                         }
                         >
                         <div className="chat-header">
@@ -64,11 +67,13 @@ const Chat = () => {
             })}
         </div>
         <div className='p-5 border-t border-gray-600 flex items-center gap-2'>
-            <input value={newMessage} onChange={(e) => setNewMessage(e.target.value)} placeholder="Message" type="text" className='flex-1 border border-gray-500 text-white rounded p-2' />
-            <button onClick={sendMessage} className='btn btn-primary'>Send</button>
+            <input value={newMessage} 
+            onChange={(e) => setNewMessage(e.target.value)} placeholder="Message" type="text" className='flex-1 border border-gray-500 text-white rounded p-2' />
+            <button onClick={sendMessage} className='btn btn-primary'>Send
+            </button>
         </div>
     </div>
-  )
-}
+  );
+};
 
-export default Chat
+export default Chat;
