@@ -79,7 +79,19 @@ const Chat = () => {
 
   return (
     <div className='w-3/4 mx-auto border border-gray-600 m-5 h-[70vh] flex flex-col'>
-        <h1 className='p-5 border-b border-gray-600'>Chat</h1>
+        <div className='flex items-center justify-between border-b border-gray-600 px-5 py-3'>
+            <div className='flex items-center gap-3'>
+                <div className="avatar">
+                    <div className="ring-primary ring-offset-base-100 w-12 rounded-full ring-2 ring-offset-2">
+                        <img alt="user photo" className="object-cover" src={user?.photoUrl} />
+                    </div>
+                </div>
+                <div>
+                    <h2 className='font-semibold text-white'>{user?.firstName} {user?.lastName}</h2>
+                </div>
+            </div>
+            <h1 className='text-lg font-semibold'>Chat</h1>
+        </div>
         <div className='flex-1 overflow-scroll p-5'>
             {messages.map((msg, index) => {
                 return (
@@ -90,10 +102,7 @@ const Chat = () => {
                             (user?.firstName === msg.firstName ? "chat-end" : "chat-start")
                         }
                         >
-                        <div className="chat-header">
-                            {`${msg.firstName}  ${msg.lastName}`}
-                            <time className="text-xs opacity-50"> 2 hours ago</time>
-                        </div>
+                        
                         <div className="chat-bubble">{msg.text}</div>
                         <div className="chat-footer opacity-50">Seen</div>
                     </div>
